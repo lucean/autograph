@@ -19,7 +19,6 @@ ExtractorFactory.register_re("gliner2_re", lambda params: GLiNER2RelationExtract
 
 def example_run(config: Dict[str, Any], segment_text: str) -> Dict[str, Any]:
     ner = ExtractorFactory.create_ner(config)
-    relation_ex = ExtractorFactory.create_re(config)
 
     extraction_cfg = config.get("extraction") or {}
     entity_labels = extraction_cfg.get("entity_labels") or []
@@ -29,7 +28,6 @@ def example_run(config: Dict[str, Any], segment_text: str) -> Dict[str, Any]:
     with_spans = extraction_cfg.get("with_spans") or False
 
     ents = ner.extract(segment_text, entity_labels, threshold=ner_threshold, spans=with_spans)
-    relations = relation_ex.extract(segment_text, relation_types)
 
     # Only do RE if relation types exist AND backend is not disabled
     re_cfg = extraction_cfg.get("re") or {}
