@@ -7,3 +7,9 @@ backend = "gliner2"
 
 [extraction.ner.params]
 model_name = "fastino/gliner2-base-v1"
+
+[extraction.re]
+backend = "gliner2_re"
+
+[extraction.re.params]
+model_name = "fastino/gliner2-base-v1"
