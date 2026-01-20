@@ -1,0 +1,9 @@
+[extraction]
+entity_labels = ["company", "person", "product", "location"]
+relation_types = ["is_ceo_of"]
+
+[extraction.ner]
+backend = "gliner2"
+
+[extraction.ner.params]
+model_name = "fastino/gliner2-base-v1"
