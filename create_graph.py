@@ -38,7 +38,7 @@ def example_run(config: Dict[str, Any], segment_text: str) -> Dict[str, Any]:
     re_meta = None
     if do_re:
         re_extractor = ExtractorFactory.create_re(config)
-        rels = re_extractor.extract(segment_text, ents, relation_types, threshold=re_threshold)
+        rels = re_extractor.extract(segment_text, entities=entity_labels, relation_types=relation_types, threshold=re_threshold)
         re_meta = re_extractor.get_run_meta().as_dict()
 
     return {

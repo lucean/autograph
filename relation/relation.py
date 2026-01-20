@@ -1,6 +1,6 @@
 from typing import runtime_checkable, Protocol, List
 
-from model.model import NERMention, RelationMention
+from model.model import RelationMention, NERMention
 from ner.ner_extractor import ExtractorRunMetadata
 
 
